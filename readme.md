@@ -8,11 +8,9 @@ In one scenario, when handed a list of devices, each whispering their encrypted 
 
 ## Run test
 
-
+./gradlew test
 
 ## How to run on Docker
-
-./gradlew test
 
 ### Create Image
 
