@@ -1,0 +1,167 @@
+{
+	"info": {
+		"_postman_id": "4ab60ae6-a6f2-4839-b622-04ac388fd229",
+		"name": "Watcher",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5574398"
+	},
+	"item": [
+		{
+			"name": "Message",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"devices\": [\n        {\n            \"id\": \"1\",\n            \"message\": [\"este\", \"\", \"\", \"mensaje\", \"\"]\n        }, \n        {\n            \"id\": \"2\",\n            \"message\": [\"\", \"es\", \"\", \"\", \"secreto\"]\n        }, \n        {\n            \"id\": \"3\",\n            \"message\": [\"este\", \"\", \"un\", \"\", \"\"]\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/watcher/message",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"watcher",
+						"message"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Device 1 - split",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"message\": [\"este\", \"\", \"\", \"mensaje\", \"\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/watcher/message_split/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"watcher",
+						"message_split",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Device 2 - split",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"message\": [\"\", \"es\", \"\", \"\", \"secreto\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/watcher/message_split/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"watcher",
+						"message_split",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Device 3 - split",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"message\": [\"este\", \"\", \"un\", \"\", \"\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/watcher/message_split/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"watcher",
+						"message_split",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "message_split",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"message\": [\"este\", \"\", \"un\", \"\", \"\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/watcher/message_split/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"watcher",
+						"message_split",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
